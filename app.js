@@ -5,9 +5,36 @@ const yargs = require('yargs');
 // REQUIRE FILES
 const notes = require('./notes.js');
 
+// NOTE TITLE OBJECT (FOR COMMAND)
+const title = {
+	describe: 'Title of note',
+	demand: true,
+	alias: 't'
+};
+// NOTE BODY OBJECT (FOR COMMAND)
+const body = {
+	describe: 'Body of note',
+	demand: true,
+	alias: 'b'
+};
+
 // CREATE ARGUMENT/COMMAND VARIABLES
-const argv = yargs.argv;
+const argv = yargs
+	.command('add', 'Add a new note', {
+		title,
+		body
+	})
+	.command('list', 'List all notes')
+	.command('read', 'Read a note', {
+		title
+	})
+	.command('remove', 'Delete a note', {
+		title
+	})
+	.help()
+	.argv;
 var command = argv._[0];
+
 
 // IF USER COMMANDS TO ADD NOTE
 if (command === 'add') {
