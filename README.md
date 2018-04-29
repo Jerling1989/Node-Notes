@@ -3,7 +3,7 @@ This is a simple command line notes app made with NODE. The app requires fs, lod
 
 ---
 
-- One
+- The first thing the user can do it run the --help argument to get a list of the different commands that they can run to use the app and make it work. The commands are: add, list, read, and remove.
 ![USER COMMANDS](read_me/1-commands.png)
 
 - Two
