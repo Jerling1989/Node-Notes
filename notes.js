@@ -47,8 +47,15 @@ var getAll = () => {
 	console.log('Getting all notes');
 };
 
+
+// GET NOTE FUNCTION
 var getNote = (title) => {
-	console.log('Getting note:', title);
+	// FETCH NOTES OBJECT
+	var notes = fetchNotes();
+	// CHECK IF NOTE WITH TITLE EXISTS, IF SO ADD INTO READNOTES ARRAY
+	var readNotes  = notes.filter((note) => note.title === title);
+	// RETURN THE NOTE THE USER WANTS TO READ
+	return readNotes[0];
 };
 
 
@@ -64,9 +71,21 @@ var removeNote = (title) => {
 	return notes.length != newNotes.length
 };
 
+
+// LOG NOTE FUNCTION
+var logNote = (note) => {
+	// LOG INFO FROM NOTE OBJECT
+	console.log('--');
+	console.log(`Title: ${note.title}`);
+	console.log(`Body: ${note.body}`);
+};
+
+
+// EXPORT FUNCTIONS
 module.exports = {
 	addNote,
 	getAll,
 	getNote,
-	removeNote
+	removeNote,
+	logNote
 };
