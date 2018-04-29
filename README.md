@@ -12,5 +12,5 @@ This is a simple command line notes app made with NODE. The app requires fs, lod
 - There are two ways the user can take a look at thier notes. The first is to search for a single note by entering the 'read' command followed by the title of the note they are looking for. The second is by running the 'list' command and listing the content of every note saved.
 ![READ/LIST NOTES](read_me/3-readandlist.png)
 
-- Four
+- The user can delete a note they no longer have use for by entering the 'remove' command followed by the title of the note they would like deleted from the notes list.
 ![REMOVE NOTE](read_me/4-remove.png)
