@@ -3,10 +3,10 @@ This is a simple command line notes app made with NODE. The app requires fs, lod
 
 ---
 
-- The first thing the user can do it run the --help argument to get a list of the different commands that they can run to use the app and make it work. The commands are: add, list, read, and remove.
+- The first thing the user can do is run the --help argument to get a list of the different commands that they can run to use the app and make it work. The commands are: add, list, read, and remove.
 ![USER COMMANDS](read_me/1-commands.png)
 
-- Two
+- The user can run the add command to add a new note to thier notes list. The command required the -t argument to add a title to the note, and a -b command to specify the body of the note. After filling out the information they will get a message that the note was added as well as the content of the new note displayed to the console.
 ![ADD NOTE](read_me/2-add.png)
 
 - Three
