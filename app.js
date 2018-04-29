@@ -1,5 +1,3 @@
-console.log('Starting app.js');
-
 // REQUIRE NPM PACKAGES
 const fs = require('fs');
 const _ = require('lodash');
@@ -7,14 +5,9 @@ const yargs = require('yargs');
 // REQUIRE FILES
 const notes = require('./notes.js');
 
-// CREATE APP VARIABLES
+// CREATE ARGUMENT/COMMAND VARIABLES
 const argv = yargs.argv;
 var command = argv._[0];
-
-// LOG USER COMMAND
-console.log('Command:', command);
-// LOG YARGS PARSED INPUT
-console.log('Yargs:', argv);
 
 // IF USER COMMANDS TO ADD NOTE
 if (command === 'add') {
@@ -29,9 +22,14 @@ if (command === 'add') {
 		notes.logNote(note);
 	}
 
-// IF USER COMMANDS TO LIST NOTES
+// IF USER COMMANDS TO LIST ALL  NOTES
 } else if (command === 'list') {
-	notes.getAll();
+	// GET ALL THE NOTES
+	var allNotes = notes.getAll();
+	// LOG THE AMOUNT OF NOTES FOUND
+	console.log(`Printing ${allNotes.length} note(s)`);
+	// LOOP THROUGH NOTES ARRAY AND LOG EACH NOTE
+	allNotes.forEach((note) => notes.logNote(note));
 
 // IF USER COMMANDS TO READ NOTE
 } else if (command === 'read') {

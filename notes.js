@@ -1,4 +1,4 @@
-console.log('Starting notes.js');
+// REQUIRE FS
 const fs = require('fs');
 
 // FETCH NOTES FUNCTION
@@ -43,8 +43,10 @@ var addNote = (title, body) => {
 };
 
 
+// GET ALL NOTES FUNCTION
 var getAll = () => {
-	console.log('Getting all notes');
+	// RETURN NOTES OBJECT
+	return fetchNotes();
 };
 
 
@@ -74,6 +76,7 @@ var removeNote = (title) => {
 
 // LOG NOTE FUNCTION
 var logNote = (note) => {
+	debugger;
 	// LOG INFO FROM NOTE OBJECT
 	console.log('--');
 	console.log(`Title: ${note.title}`);
