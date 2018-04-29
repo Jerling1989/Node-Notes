@@ -30,7 +30,7 @@ var addNote = (title, body) => {
 		title,
 		body
 	};
-	// CHECK IF NOTE TITLE ALREADY EXISTS, IF SO PUSH INTO DUPLICATE NOTES ARRAY
+	// CHECK IF NOTE TITLE ALREADY EXISTS, IF SO ADD INTO DUPLICATENOTES ARRAY
 	var duplicateNotes = notes.filter((note) => note.title === title);
 
 	// IF NOTE TITLE DOES NOT ALREADY EXIST
@@ -51,8 +51,17 @@ var getNote = (title) => {
 	console.log('Getting note:', title);
 };
 
+
+// REMOVE NOTE FUNCTION
 var removeNote = (title) => {
-	console.log('Removing note:', title);
+	// FETCH NOTES OBJECT
+	var notes = fetchNotes();
+	// REMOVE ANY NOTE WITH TITLE ENTERED
+	var newNotes = notes.filter((note) => note.title !== title);
+	// SAVE NEW FILTERED NOTES
+	saveNotes(newNotes);
+	// CHECK IF ANY NOTES WERE REMOVED, RETURN VALUE
+	return notes.length != newNotes.length
 };
 
 module.exports = {
